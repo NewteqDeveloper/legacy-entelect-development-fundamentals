@@ -4,8 +4,9 @@ using System.Text;
 
 namespace SolidDojo
 {
-    interface IShape
+    public enum RunOptions
     {
-        void Draw();
+        Shapes1,
+        Shapes2
     }
 }

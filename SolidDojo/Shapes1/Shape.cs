@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SolidDojo
+namespace SolidDojo.Shapes1
 {
     
     public abstract class Shape

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SolidDojo
+namespace SolidDojo.Shapes1
 {
-    class Square : Shape
+    public class Square : Shape
     {
         //public new int Draw()
         //{
