@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Atheletes
+namespace Atheletes.Atheletes
 {
-    public class HighJumper : Athelete
+    public class ShotputThrower : Athelete
     {
         public override void HighJump()
         {
-            Console.WriteLine($"{AtheleteInformation} doing a SUPPPPPPPPPER HIGH jump");
+            throw new NotImplementedException();
         }
 
         public override void LongJump()
@@ -43,7 +43,7 @@ namespace Atheletes
 
         public override void ThrowShotput()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"{AtheleteInformation} - throwing the shotput (this thing is heavy!)");
         }
 
         public override void TripleJump()

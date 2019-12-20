@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Atheletes
+namespace Atheletes.Atheletes
 {
     public class LongJumper : Athelete
     {
@@ -48,7 +48,7 @@ namespace Atheletes
 
         public override void TripleJump()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"{AtheleteInformation} Performing 1 long jump, 2 longer jump, and 3 LOOOOOONG jump");
         }
     }
 }

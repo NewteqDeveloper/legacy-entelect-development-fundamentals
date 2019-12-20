@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Atheletes
+namespace Atheletes.Atheletes
 {
-    public class Runner : Athelete
+    public class HighJumper : Athelete
     {
         public override void HighJump()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"{AtheleteInformation} doing a SUPPPPPPPPPER HIGH jump");
         }
 
         public override void LongJump()
@@ -18,17 +18,17 @@ namespace Atheletes
 
         public override void RunHurdles()
         {
-            Console.WriteLine($"{AtheleteInformation} Running Hurdles");
+            throw new NotImplementedException();
         }
 
         public override void RunRelay()
         {
-            Console.WriteLine($"{AtheleteInformation} Running Relay");
+            throw new NotImplementedException();
         }
 
         public override void RunSprints(SprintDistance distance)
         {
-            Console.WriteLine($"{AtheleteInformation} Running the sprints for: {(int)distance}m");
+            throw new NotImplementedException();
         }
 
         public override void Swim(SwimDistance distance)
