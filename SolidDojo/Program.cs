@@ -5,6 +5,8 @@ namespace SolidDojo
 {
     class Program
     {
+        // THIS PROGRAM IS TO SHOW THE LISKOV SUBSTITUTION PRINCPLE BROKEN with the use of the new keyword
+
         static void Main(string[] args)
         {
             var runOption = RunOptions.Shapes2;
@@ -27,6 +29,7 @@ namespace SolidDojo
                 #endregion shapes 1
             }
 
+            // MOST EXTREME CASE - because draw does not do at all what the base class does
             if (runOption == RunOptions.Shapes2)
             {
                 #region shapes 2
