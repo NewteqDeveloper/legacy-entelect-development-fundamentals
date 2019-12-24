@@ -15,7 +15,7 @@ namespace DependencyInjection.House
             this.logger = logger;
         }
 
-        public void Use()
+        public void UseSanitation()
         {
             this.logger.LogInformation("There are people that do sanitation so, you don't have to. Imagine driving to the waste dumps every day to through out your trash.");
         }

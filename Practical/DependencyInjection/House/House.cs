@@ -30,10 +30,10 @@ namespace DependencyInjection.House
         public void LiveInHouse()
         {
             this.electricityService.Use();
-            this.waterService.Use();
-            this.internetService.Use();
-            this.cleaningService.Use();
-            this.sanitationService.Use();
+            this.waterService.UseWater();
+            this.internetService.UseInternet();
+            this.cleaningService.Clean();
+            this.sanitationService.UseSanitation();
         }
     }
 }

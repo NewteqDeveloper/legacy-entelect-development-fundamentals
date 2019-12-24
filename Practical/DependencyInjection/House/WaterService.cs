@@ -15,7 +15,7 @@ namespace DependencyInjection.House
             this.logger = logger;
         }
 
-        public void Use()
+        public void UseWater()
         {
             this.logger.LogInformation("Clean, running water is over looked way too often.");
         }
