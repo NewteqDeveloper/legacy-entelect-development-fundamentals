@@ -8,9 +8,9 @@ namespace DependencyInjection.House
 {
     public class ElectricityService
     {
-        private readonly ILogger<ElectricityService> logger;
+        private readonly ILogger logger;
 
-        public ElectricityService(ILogger<ElectricityService> logger)
+        public ElectricityService(ILogger logger)
         {
             this.logger = logger;
         }

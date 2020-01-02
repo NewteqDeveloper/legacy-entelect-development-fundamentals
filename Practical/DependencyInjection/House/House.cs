@@ -35,5 +35,27 @@ namespace DependencyInjection.House
             this.cleaningService.Clean();
             this.sanitationService.UseSanitation();
         }
+
+        public void UseService(HouseService service)
+        {
+            switch (service)
+            {
+                case HouseService.Electricity:
+                    this.electricityService.Use();
+                    break;
+                case HouseService.Water:
+                    this.waterService.UseWater();
+                    break;
+                case HouseService.Internet:
+                    this.internetService.UseInternet();
+                    break;
+                case HouseService.Cleaning:
+                    this.cleaningService.Clean();
+                    break;
+                case HouseService.Sanitation:
+                    this.sanitationService.UseSanitation();
+                    break;
+            }
+        }
     }
 }
