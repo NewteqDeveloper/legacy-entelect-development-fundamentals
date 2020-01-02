@@ -14,7 +14,7 @@ namespace DependencyInjection.Controllers
     {
         private readonly House.House house;
         
-        public HouseController(ILogger logger)
+        public HouseController(ILogger<HouseController> logger)
         {
             house = new House.House(
                 new House.ElectricityService(logger),
@@ -25,6 +25,7 @@ namespace DependencyInjection.Controllers
         }
 
         [HttpGet]
+        [Route("live")]
         public IActionResult LiveInHouse()
         {
             house.LiveInHouse();
@@ -32,6 +33,7 @@ namespace DependencyInjection.Controllers
         }
 
         [HttpGet]
+        [Route("use")]
         public IActionResult UseHouseService(HouseService service)
         {
             house.UseService(service);
