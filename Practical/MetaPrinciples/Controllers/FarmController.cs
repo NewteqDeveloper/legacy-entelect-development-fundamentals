@@ -21,15 +21,23 @@ namespace MetaPrinciples.Controllers
             this.logger = logger;
             this.animalService = animalDb;
 
-            // this is the place for the animals to interact
-            // maybe have list a static list of animals that can be created and they can interact with each other
-            // or maybe just one animal per type interacts
-
-            // the idea is to maybe have an enum of all the animals and then take in two and have them interact with each other
-            // the before that solution will be to have a method per different type of interaction
-
-            // think about seperation of concerns and least knowledge too
-            // least astonishment should be easy enough, with the open db connection in one method and the close in another
+            // things to do for this practical still:
+            /*
+             * new up the animal service rather - let them DI it in
+             * 
+             * Add a report endpoint
+             * 
+             * The solution will be to do a typeof(Dog) check on the classes in the list
+             */
+             // the basic idea of what to do with this code:
+             /*
+              * 
+              * they need to include the sheep, bird and chicken making sounds and getting them all
+              * they need to refactor the animal service to do seperation of concerns for the report
+              * there is repeated code here for making sounds - sound be abstracted
+              * principle of least astonisment is in the reporting
+              * least knowledge is hard for an example
+              */
         }
 
         [HttpGet]
