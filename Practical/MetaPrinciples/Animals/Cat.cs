@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace MetaPrinciples.Animals
 {
-    public abstract class Animal
+    public class Cat : Animal
     {
-        public abstract AnimalType Type { get; }
+        public override AnimalType Type => AnimalType.Cat;
 
-        public string Name { get; set; }
+        public string Sound => "Meooooow....";
     }
 }

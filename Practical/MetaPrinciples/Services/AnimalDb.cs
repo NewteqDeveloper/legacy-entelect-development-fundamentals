@@ -17,20 +17,10 @@ namespace MetaPrinciples.Services
 
         }
 
-        public List<Animal> Animals()
+        public IList<Animal> Animals()
         {
             // load default animals
-            return new List<Animal>
-            {
-                new Animal
-                {
-
-                },
-                new Animal
-                {
-
-                },
-            };
+            return Database.Data.Animals;
         }
 
         // principle of least astonishment
@@ -43,7 +33,7 @@ namespace MetaPrinciples.Services
 
             if (animals == null)
             {
-                animals = Animals();
+                animals = Animals().ToList();
             }
 
             return animals.Where(x => x.Type == AnimalType.Dog);

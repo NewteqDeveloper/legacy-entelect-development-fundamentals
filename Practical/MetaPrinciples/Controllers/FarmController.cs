@@ -59,5 +59,12 @@ namespace MetaPrinciples.Controllers
         {
             return Ok(animalDb.Animals().Where(x => x.Type == AnimalType.Cow));
         }
+
+        [HttpGet]
+        [Route("whatDoesTheDogSay")]
+        public string DogSound()
+        {
+
+        }
     }
 }
