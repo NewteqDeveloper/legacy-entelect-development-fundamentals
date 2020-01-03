@@ -6,21 +6,36 @@ using System.Threading.Tasks;
 
 namespace MetaPrinciples.Services
 {
-    public class AnimalDb
+    public class AnimalService
     {
         public bool IsConnected { get; private set; }
 
         private List<Animal> animals;
 
-        public AnimalDb()
+        public AnimalService()
         {
 
+        }
+
+        public void GetAnimals()
+        {
+            animals = Database.Data.Animals.ToList();
         }
 
         public IList<Animal> Animals()
         {
             // load default animals
             return Database.Data.Animals;
+        }
+
+        public IList<Animal> GetCows()
+        {
+            return animals.Where(x => x.Type == AnimalType.Cow).ToList();
+        }
+
+        public IEnumerable<Dog> GetAllDogs()
+        {
+            return animals.Where(x => x.Type == AnimalType.Dog).Select(x => (Dog)x);
         }
 
         // principle of least astonishment

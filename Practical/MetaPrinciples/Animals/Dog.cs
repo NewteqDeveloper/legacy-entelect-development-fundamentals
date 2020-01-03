@@ -13,5 +13,10 @@ namespace MetaPrinciples.Animals
         {
             return "Bark!";
         }
+
+        public string PlayFetch()
+        {
+            return "Dog fetches stick";
+        }
     }
 }

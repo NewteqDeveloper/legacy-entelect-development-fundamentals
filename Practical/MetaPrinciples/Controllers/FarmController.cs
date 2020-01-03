@@ -14,12 +14,12 @@ namespace MetaPrinciples.Controllers
     public class FarmController : ControllerBase
     {
         private readonly ILogger<FarmController> logger;
-        private readonly AnimalDb animalDb;
+        private readonly AnimalService animalService;
 
-        public FarmController(ILogger<FarmController> logger, AnimalDb animalDb)
+        public FarmController(ILogger<FarmController> logger, AnimalService animalDb)
         {
             this.logger = logger;
-            this.animalDb = animalDb;
+            this.animalService = animalDb;
 
             // this is the place for the animals to interact
             // maybe have list a static list of animals that can be created and they can interact with each other
@@ -36,35 +36,36 @@ namespace MetaPrinciples.Controllers
         [Route("getAll")]
         public IList<Animal> GetAllAnimals()
         {
-            return animalDb.Animals();
+            return animalService.Animals();
         }
 
         [HttpGet]
         [Route("getAllCats")]
         public List<Animal> GetAllCats()
         {
-            return animalDb.Animals().Where(x => x.Type == AnimalType.Cat).ToList();
+            return animalService.Animals().Where(x => x.Type == AnimalType.Cat).ToList();
         }
 
         [HttpGet]
         [Route("getDogs")]
         public IEnumerable<Animal> GetAllDogs()
         {
-            return animalDb.Animals().Where(x => x.Type == AnimalType.Dog);
+            return animalService.GetAllDogs();
         }
 
         [HttpGet]
         [Route("getTheCowsOnTheFarm")]
         public IActionResult GetAllCows()
         {
-            return Ok(animalDb.Animals().Where(x => x.Type == AnimalType.Cow));
+            animalService.GetAnimals();
+            return Ok(animalService.GetCows());
         }
 
         [HttpGet]
         [Route("whatDoesTheDogSay")]
         public string DogSound()
         {
-            var animalDog = animalDb.Animals().FirstOrDefault(x => x.Type == AnimalType.Dog);
+            var animalDog = animalService.Animals().FirstOrDefault(x => x.Type == AnimalType.Dog);
             var dog = (Dog)animalDog;
             return dog.Bark();
         }
@@ -73,7 +74,7 @@ namespace MetaPrinciples.Controllers
         [Route("CatSays")]
         public string CatSays()
         {
-            var animalCat = animalDb.Animals().FirstOrDefault(x => x.Type == AnimalType.Cat);
+            var animalCat = animalService.Animals().FirstOrDefault(x => x.Type == AnimalType.Cat);
             var cat = (Cat)animalCat;
             return cat.Sound;
         }
@@ -82,7 +83,7 @@ namespace MetaPrinciples.Controllers
         [Route("cowSound")]
         public string CowSoundMakes()
         {
-            var animalCow = animalDb.Animals().FirstOrDefault(x => x.Type == AnimalType.Cow);
+            var animalCow = animalService.Animals().FirstOrDefault(x => x.Type == AnimalType.Cow);
             var cow = (Cow)animalCow;
             return cow.MakeSound();
         }

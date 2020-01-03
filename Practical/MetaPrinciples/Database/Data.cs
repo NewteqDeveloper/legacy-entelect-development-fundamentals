@@ -38,6 +38,18 @@ namespace MetaPrinciples.Database
                 new Cow
                 {
                     Name = "Milky"
+                },
+                new Sheep
+                {
+                    Name = "Ba ba sheep"
+                },
+                new Chicken
+                {
+                    Name = "Chucky"
+                },
+                new Bird
+                {
+                    Name = "Tweety"
                 }
             };
     }

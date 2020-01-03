@@ -5,13 +5,8 @@ using System.Threading.Tasks;
 
 namespace MetaPrinciples.Animals
 {
-    public enum AnimalType
+    public class Sheep : Animal
     {
-        Dog,
-        Cat,
-        Cow,
-        Sheep,
-        Chicken,
-        Bird,
+        public override AnimalType Type => AnimalType.Sheep;
     }
 }

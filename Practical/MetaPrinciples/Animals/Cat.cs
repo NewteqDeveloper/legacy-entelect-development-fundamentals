@@ -10,5 +10,10 @@ namespace MetaPrinciples.Animals
         public override AnimalType Type => AnimalType.Cat;
 
         public string Sound => "Meooooow....";
+
+        public string Play()
+        {
+            return "Cat purrrrrs while playing with a scratcher";
+        }
     }
 }
