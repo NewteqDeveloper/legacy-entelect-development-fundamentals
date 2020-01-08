@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DependencyInjection.House.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json.Serialization;
@@ -6,57 +7,54 @@ using System.Threading.Tasks;
 
 namespace DependencyInjection.House
 {
-    public class House
+    public class House : IHouse
     {
-        private readonly ElectricityService electricityService;
-        private readonly WaterService waterService;
-        private readonly InternetService internetService;
-        private readonly CleaningService cleaningService;
-        private readonly SanitationService sanitationService;
+        private readonly IElectricityService electricityService;
+        private readonly IWaterService waterService;
+        private readonly IInternetService internetService;
+        private readonly ICleaningService cleaningService;
+        private readonly ISanitationService sanitationService;
+
+        private readonly Dictionary<HouseService, IHouseHoldService> services;
 
         public House(
-            ElectricityService electricityService,
-            WaterService waterService,
-            InternetService internetService,
-            CleaningService cleaningService,
-            SanitationService sanitationService)
+            IElectricityService electricityService,
+            IWaterService waterService,
+            IInternetService internetService,
+            ICleaningService cleaningService,
+            ISanitationService sanitationService)
         {
             this.electricityService = electricityService;
             this.waterService = waterService;
             this.internetService = internetService;
             this.cleaningService = cleaningService;
             this.sanitationService = sanitationService;
+
+            this.services.Add(HouseService.Electricity, this.electricityService);
+            this.services.Add(HouseService.Water, this.waterService);
+            this.services.Add(HouseService.Internet, this.internetService);
+            this.services.Add(HouseService.Cleaning, this.cleaningService);
+            this.services.Add(HouseService.Sanitation, this.sanitationService);
         }
 
         public void LiveInHouse()
         {
             this.electricityService.Use();
-            this.waterService.UseWater();
-            this.internetService.UseInternet();
-            this.cleaningService.Clean();
-            this.sanitationService.UseSanitation();
+            this.waterService.Use();
+            this.internetService.Use();
+            this.cleaningService.Use();
+            this.sanitationService.Use();
+
+            // alternatively
+            foreach(var item in services)
+            {
+                item.Value.Use();
+            }
         }
 
         public void UseService(HouseService service)
         {
-            switch (service)
-            {
-                case HouseService.Electricity:
-                    this.electricityService.Use();
-                    break;
-                case HouseService.Water:
-                    this.waterService.UseWater();
-                    break;
-                case HouseService.Internet:
-                    this.internetService.UseInternet();
-                    break;
-                case HouseService.Cleaning:
-                    this.cleaningService.Clean();
-                    break;
-                case HouseService.Sanitation:
-                    this.sanitationService.UseSanitation();
-                    break;
-            }
+            services[service].Use();
         }
     }
 }

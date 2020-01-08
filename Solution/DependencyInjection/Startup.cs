@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DependencyInjection.House.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -33,6 +34,14 @@ namespace DependencyInjection
                 // ignore obsolete warning, as it does not work as intended without this
                 options.DescribeAllEnumsAsStrings();
             });
+
+            services.AddTransient<IHouse, House.House>();
+            services.AddTransient<IElectricityService, House.SolarPowerService>();
+            services.AddTransient<IInternetService, House.FibreInternetService>();
+            services.AddTransient<ICleaningService, House.UltraCleaningService>();
+            services.AddTransient<ISanitationService, House.SanitationService>();
+            services.AddTransient<IWaterService, House.WaterService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

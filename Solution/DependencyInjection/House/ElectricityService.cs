@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using DependencyInjection.House.Interfaces;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DependencyInjection.House
 {
-    public class ElectricityService
+    public class ElectricityService : IElectricityService
     {
         private readonly ILogger logger;
 

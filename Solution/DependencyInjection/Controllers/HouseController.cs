@@ -1,4 +1,5 @@
 ﻿using DependencyInjection.House;
+using DependencyInjection.House.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,16 +13,11 @@ namespace DependencyInjection.Controllers
     [Route("[controller]")]
     public class HouseController : ControllerBase
     {
-        private readonly House.House house;
-        
-        public HouseController(ILogger<HouseController> logger)
+        private readonly IHouse house;
+
+        public HouseController(ILogger<HouseController> logger, IHouse house)
         {
-            house = new House.House(
-                new House.ElectricityService(logger),
-                new House.WaterService(logger),
-                new House.InternetService(logger),
-                new House.CleaningService(logger),
-                new House.SanitationService(logger));
+            this.house = house;
         }
 
         [HttpGet]

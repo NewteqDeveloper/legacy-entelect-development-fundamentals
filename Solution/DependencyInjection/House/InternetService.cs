@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using DependencyInjection.House.Interfaces;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DependencyInjection.House
 {
-    public class InternetService
+    public class InternetService : IInternetService
     {
         private readonly ILogger logger;
 
@@ -15,7 +16,7 @@ namespace DependencyInjection.House
             this.logger = logger;
         }
 
-        public void UseInternet()
+        public void Use()
         {
             this.logger.LogInformation("Using boring ADSL internet");
         }
