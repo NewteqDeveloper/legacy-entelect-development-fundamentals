@@ -5,8 +5,10 @@ namespace SolidDojo
 {
     class Program
     {
-        // THIS PROGRAM IS TO SHOW THE LISKOV SUBSTITUTION PRINCPLE BROKEN with the use of the new keyword
-        // This is just for demonostration purposes
+        /*
+         * This program is to show the LISKOV subsitution princple broken with the user of the "new" keyword in C#
+         * This is just for demonostration purposes
+         */
 
         static void Main(string[] args)
         {
