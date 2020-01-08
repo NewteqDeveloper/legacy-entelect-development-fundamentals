@@ -1,58 +1,27 @@
-﻿using System;
+﻿using AtheletesSingleResponsibility.Athletes.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace AtheletesSingleResponsibility.Athletes
 {
-    public class Swimmer : Athelete
+    public class Swimmer : Athlete, ISwim
     {
-        public Swimmer(string firstName, string lastName, Gender gender, string country) : base(firstName, lastName, gender, country)
+        private readonly SwimDistance distance;
+
+        public Swimmer(string firstName, string lastName, Gender gender, string country, SwimDistance distance) : base(firstName, lastName, gender, country)
         {
+            this.distance = distance;
         }
 
-        public override void HighJump()
+        public override void Compete()
         {
-            throw new NotImplementedException();
+            this.Swim(this.distance);
         }
 
-        public override void LongJump()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void RunHurdles()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void RunRelay()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void RunSprints(SprintDistance distance)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Swim(SwimDistance distance)
+        public void Swim(SwimDistance distance)
         {
             Console.WriteLine($"{AtheleteInformation} - swimming as fast as I can for {(int) distance}");
-        }
-
-        public override void ThrowJavelin()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void ThrowShotput()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void TripleJump()
-        {
-            throw new NotImplementedException();
         }
     }
 }

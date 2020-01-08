@@ -1,58 +1,24 @@
-﻿using System;
+﻿using AtheletesSingleResponsibility.Athletes.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace AtheletesSingleResponsibility.Athletes
 {
-    public class ShotputThrower : Athelete
+    public class ShotputThrower : Athlete, IShotputThrow
     {
         public ShotputThrower(string firstName, string lastName, Gender gender, string country) : base(firstName, lastName, gender, country)
         {
         }
 
-        public override void HighJump()
+        public override void Compete()
         {
-            throw new NotImplementedException();
+            this.ThrowShotput();
         }
 
-        public override void LongJump()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void RunHurdles()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void RunRelay()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void RunSprints(SprintDistance distance)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Swim(SwimDistance distance)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void ThrowJavelin()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void ThrowShotput()
+        public void ThrowShotput()
         {
             Console.WriteLine($"{AtheleteInformation} - throwing the shotput (this thing is heavy!)");
-        }
-
-        public override void TripleJump()
-        {
-            throw new NotImplementedException();
         }
     }
 }

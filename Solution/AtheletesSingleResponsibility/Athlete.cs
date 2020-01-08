@@ -24,9 +24,9 @@ namespace AtheletesSingleResponsibility
         Female
     }
     
-    public abstract class Athelete
+    public abstract class Athlete : IAthlete
     {
-        public Athelete(string firstName, string lastName, Gender gender, string country)
+        public Athlete(string firstName, string lastName, Gender gender, string country)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -41,14 +41,6 @@ namespace AtheletesSingleResponsibility
 
         public string AtheleteInformation => $"{FirstName} {LastName} ({Gender}), from {Country} is now performing :: ";
 
-        public abstract void RunSprints(SprintDistance distance);
-        public abstract void Swim(SwimDistance distance);
-        public abstract void LongJump();
-        public abstract void HighJump();
-        public abstract void ThrowJavelin();
-        public abstract void RunHurdles();
-        public abstract void RunRelay();
-        public abstract void ThrowShotput();
-        public abstract void TripleJump();
+        public abstract void Compete();
     }
 }
