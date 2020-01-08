@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Atheletes
+namespace AtheletesSingleResponsibility
 {
     public enum SprintDistance
     {
@@ -26,13 +26,21 @@ namespace Atheletes
     
     public abstract class Athelete
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Country { get; set; }
-        public Gender Gender { get; set; }
+        public Athelete(string firstName, string lastName, Gender gender, string country)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Gender = gender;
+            Country = country;
+        }
+        
+        public string FirstName { get; }
+        public string LastName { get; }
+        public string Country { get; }
+        public Gender Gender { get; }
 
         public string AtheleteInformation => $"{FirstName} {LastName} ({Gender}), from {Country} is now performing :: ";
-        
+
         public abstract void RunSprints(SprintDistance distance);
         public abstract void Swim(SwimDistance distance);
         public abstract void LongJump();

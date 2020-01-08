@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Atheletes.Atheletes
+namespace AtheletesSingleResponsibility.Atheletes
 {
     public class JavelinThrower : Athelete
     {
+        public JavelinThrower(string firstName, string lastName, Gender gender, string country) : base(firstName, lastName, gender, country)
+        {
+        }
+
         public override void HighJump()
         {
             throw new NotImplementedException();

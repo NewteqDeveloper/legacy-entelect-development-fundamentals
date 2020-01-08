@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Atheletes.Atheletes
+namespace AtheletesSingleResponsibility.Atheletes
 {
     public class HighJumper : Athelete
     {
+        public HighJumper(string firstName, string lastName, Gender gender, string country) : base(firstName, lastName, gender, country)
+        {
+        }
+
         public override void HighJump()
         {
             Console.WriteLine($"{AtheleteInformation} doing a SUPPPPPPPPPER HIGH jump");
