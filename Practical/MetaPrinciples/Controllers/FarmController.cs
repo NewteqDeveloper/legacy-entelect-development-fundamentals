@@ -18,15 +18,6 @@ namespace MetaPrinciples.Controllers
         public FarmController()
         {
             this.animalService = new AnimalService();
-
-            // things to do for this practical still:
-            /*
-             * new up the animal service rather - let them DI it in
-             * 
-             * Add a report endpoint
-             * 
-             * The solution will be to do a typeof(Dog) check on the classes in the list
-             */
         }
 
         [HttpGet]
