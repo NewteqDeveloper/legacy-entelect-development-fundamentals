@@ -7,9 +7,9 @@ namespace SolidDojo.Shapes1
     
     public abstract class Shape
     {
-        public virtual void Draw()
+        public virtual string Draw()
         {
-            Console.WriteLine("Unknown shape");
+            return "Unknown shape";
         }
     }
 }

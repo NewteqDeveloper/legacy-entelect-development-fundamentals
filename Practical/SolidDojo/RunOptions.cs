@@ -6,7 +6,7 @@ namespace SolidDojo
 {
     public enum RunOptions
     {
-        Shapes1,
-        Shapes2
+        ShapesNewOverride,
+        ShapesNewOverrideInt
     }
 }

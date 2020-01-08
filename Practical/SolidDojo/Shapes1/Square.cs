@@ -11,9 +11,9 @@ namespace SolidDojo.Shapes1
         //    return 4 * 4;
         //}
 
-        public new void Draw()
+        public new string Draw()
         {
-            Console.WriteLine("Drawing Square");
+            return "Drawing Square";
         }
     }
 }

@@ -6,9 +6,9 @@ namespace SolidDojo.Shapes1
 {
     public class Circle : Shape
     {
-        public override void Draw()
+        public override string Draw()
         {
-            Console.WriteLine("Drawing Circle");
+            return "Drawing Circle";
         }
     }
 }
