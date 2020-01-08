@@ -27,15 +27,6 @@ namespace MetaPrinciples.Controllers
              * 
              * The solution will be to do a typeof(Dog) check on the classes in the list
              */
-             // the basic idea of what to do with this code:
-             /*
-              * 
-              * they need to include the sheep, bird and chicken making sounds and getting them all
-              * they need to refactor the animal service to do seperation of concerns for the report
-              * there is repeated code here for making sounds - sound be abstracted
-              * principle of least astonisment is in the reporting
-              * least knowledge is hard for an example
-              */
         }
 
         [HttpGet]
@@ -92,6 +83,20 @@ namespace MetaPrinciples.Controllers
             var animalCow = animalService.Animals().FirstOrDefault(x => x.Type == AnimalType.Cow);
             var cow = (Cow)animalCow;
             return cow.MakeSound();
+        }
+
+        [HttpGet]
+        [Route("howManyDogs")]
+        public string HowManyDogs()
+        {
+            return animalService.ReportOfDogs();
+        }
+
+        [HttpGet]
+        [Route("NumberofCats")]
+        public IActionResult NoCats()
+        {
+            return Ok(animalService.ReportOfCats());
         }
     }
 }

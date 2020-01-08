@@ -39,7 +39,7 @@ namespace MetaPrinciples.Services
         }
 
         // principle of least astonishment
-        public IEnumerable<Animal> ReportOfDogs()
+        public string ReportOfDogs()
         {
             if (!IsConnected)
             {
@@ -51,17 +51,19 @@ namespace MetaPrinciples.Services
                 animals = Animals().ToList();
             }
 
-            return animals.Where(x => x.Type == AnimalType.Dog);
+            var dogs = animals.Where(x => x.Type == AnimalType.Dog);
+            return $"There are a total of: {dogs.Count()} dogs";
         }
 
-        public IEnumerable<Animal> ReportOfCats()
+        public string ReportOfCats()
         {
             if (!IsConnected)
             {
                 throw new InvalidOperationException("Connection to the database is not opened yet");
             }
 
-            return animals.Where(x => x.Type == AnimalType.Cat);
+            var cats = animals.Where(x => x.Type == AnimalType.Cat);
+            return $"There are a total of: {cats.Count()} cats";
         }
     }
 }
