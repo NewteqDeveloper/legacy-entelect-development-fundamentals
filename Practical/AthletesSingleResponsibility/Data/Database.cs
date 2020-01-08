@@ -1,4 +1,4 @@
-﻿using AtheletesSingleResponsibility.Atheletes;
+﻿using AtheletesSingleResponsibility.Athletes;
 using System;
 using System.Collections.Generic;
 using System.Text;

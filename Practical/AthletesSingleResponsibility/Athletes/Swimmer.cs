@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AtheletesSingleResponsibility.Atheletes
+namespace AtheletesSingleResponsibility.Athletes
 {
-    public class ShotputThrower : Athelete
+    public class Swimmer : Athelete
     {
-        public ShotputThrower(string firstName, string lastName, Gender gender, string country) : base(firstName, lastName, gender, country)
+        public Swimmer(string firstName, string lastName, Gender gender, string country) : base(firstName, lastName, gender, country)
         {
         }
 
@@ -37,7 +37,7 @@ namespace AtheletesSingleResponsibility.Atheletes
 
         public override void Swim(SwimDistance distance)
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"{AtheleteInformation} - swimming as fast as I can for {(int) distance}");
         }
 
         public override void ThrowJavelin()
@@ -47,7 +47,7 @@ namespace AtheletesSingleResponsibility.Atheletes
 
         public override void ThrowShotput()
         {
-            Console.WriteLine($"{AtheleteInformation} - throwing the shotput (this thing is heavy!)");
+            throw new NotImplementedException();
         }
 
         public override void TripleJump()

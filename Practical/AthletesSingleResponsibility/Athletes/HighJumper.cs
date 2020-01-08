@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AtheletesSingleResponsibility.Atheletes
+namespace AtheletesSingleResponsibility.Athletes
 {
-    public class LongJumper : Athelete
+    public class HighJumper : Athelete
     {
-        public LongJumper(string firstName, string lastName, Gender gender, string country) : base(firstName, lastName, gender, country)
+        public HighJumper(string firstName, string lastName, Gender gender, string country) : base(firstName, lastName, gender, country)
         {
         }
 
         public override void HighJump()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"{AtheleteInformation} doing a SUPPPPPPPPPER HIGH jump");
         }
 
         public override void LongJump()
         {
-            Console.WriteLine($"{AtheleteInformation} Performing loooooooooong jump");
+            throw new NotImplementedException();
         }
 
         public override void RunHurdles()
@@ -52,7 +52,7 @@ namespace AtheletesSingleResponsibility.Atheletes
 
         public override void TripleJump()
         {
-            Console.WriteLine($"{AtheleteInformation} Performing 1 long jump, 2 longer jump, and 3 LOOOOOONG jump");
+            throw new NotImplementedException();
         }
     }
 }

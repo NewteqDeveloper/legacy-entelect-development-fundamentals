@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AtheletesSingleResponsibility.Atheletes
+namespace AtheletesSingleResponsibility.Athletes
 {
     public class Runner : Athelete
     {

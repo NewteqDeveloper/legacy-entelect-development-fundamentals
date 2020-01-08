@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AtheletesSingleResponsibility.Atheletes
+namespace AtheletesSingleResponsibility.Athletes
 {
-    public class JavelinThrower : Athelete
+    public class ShotputThrower : Athelete
     {
-        public JavelinThrower(string firstName, string lastName, Gender gender, string country) : base(firstName, lastName, gender, country)
+        public ShotputThrower(string firstName, string lastName, Gender gender, string country) : base(firstName, lastName, gender, country)
         {
         }
 
@@ -42,12 +42,12 @@ namespace AtheletesSingleResponsibility.Atheletes
 
         public override void ThrowJavelin()
         {
-            Console.WriteLine($"{AtheleteInformation} - throwing the javelin!");
+            throw new NotImplementedException();
         }
 
         public override void ThrowShotput()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"{AtheleteInformation} - throwing the shotput (this thing is heavy!)");
         }
 
         public override void TripleJump()
