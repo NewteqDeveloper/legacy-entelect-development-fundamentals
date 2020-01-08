@@ -8,9 +8,9 @@ namespace AtheletesSingleResponsibility
     {
         static void Main(string[] args)
         {
-            foreach(var athelete in Database.Atheletes)
+            foreach(var athlete in Database.Atheletes)
             {
-                athelete.Compete();
+                athlete.Compete();
             }
 
             Console.ReadKey();

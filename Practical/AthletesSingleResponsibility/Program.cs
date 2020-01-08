@@ -8,41 +8,43 @@ namespace AtheletesSingleResponsibility
     {
         static void Main(string[] args)
         {
-            foreach(var athelete in Database.Atheletes)
+            foreach(var athlete in Database.Atheletes)
             {
-                if(athelete.GetType() == typeof(HighJumper))
+                if(athlete.GetType() == typeof(HighJumper))
                 {
-                    athelete.HighJump();
+                    athlete.HighJump();
                 }
 
-                if (athelete.GetType() == typeof(JavelinThrower))
+                if (athlete.GetType() == typeof(JavelinThrower))
                 {
-                    athelete.ThrowJavelin();
+                    athlete.ThrowJavelin();
                 }
 
-                if (athelete.GetType() == typeof(LongJumper))
+                if (athlete.GetType() == typeof(LongJumper))
                 {
-                    athelete.LongJump();
-                    athelete.TripleJump();
+                    athlete.LongJump();
+                    athlete.TripleJump();
                 }
 
-                if (athelete.GetType() == typeof(Runner))
+                if (athlete.GetType() == typeof(Runner))
                 {
-                    athelete.RunSprints(SprintDistance.OneHundred);
-                    athelete.RunRelay();
-                    athelete.RunHurdles();
-                    athelete.ThrowJavelin();
+                    athlete.RunSprints(SprintDistance.OneHundred);
+                    athlete.RunRelay();
+                    athlete.RunHurdles();
+                    // this is intentional, and will break, because this runner does not know what to do with this type
+                    athlete.ThrowJavelin();
                 }
 
-                if (athelete.GetType() == typeof(ShotputThrower))
+                if (athlete.GetType() == typeof(ShotputThrower))
                 {
-                    athelete.ThrowShotput();
-                    athelete.ThrowJavelin();
+                    athlete.ThrowShotput();
+                    // this is intentional, and will break, because this shotput thrower does not know what to do with this type
+                    athlete.ThrowJavelin();
                 }
 
-                if (athelete.GetType() == typeof(Swimmer))
+                if (athlete.GetType() == typeof(Swimmer))
                 {
-                    athelete.Swim(SwimDistance.OneHundred);
+                    athlete.Swim(SwimDistance.OneHundred);
                 }
             }
 
