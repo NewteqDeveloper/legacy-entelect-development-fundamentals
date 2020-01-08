@@ -57,6 +57,8 @@ namespace MetaPrinciples.Services
 
         public string ReportOfCats()
         {
+            // TODO princple of least astonishment
+            
             if (!IsConnected)
             {
                 throw new InvalidOperationException("Connection to the database is not opened yet");
