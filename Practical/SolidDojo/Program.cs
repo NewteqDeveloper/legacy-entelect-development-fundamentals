@@ -6,7 +6,7 @@ namespace SolidDojo
     class Program
     {
         /*
-         * This program is to show the LISKOV subsitution princple broken with the user of the "new" keyword in C#
+         * This program is to show the LISKOV Substitution princple broken with the user of the "new" keyword in C#
          * This is just for demonostration purposes
          */
 
