@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SolidDojo.Shapes2
+namespace SolidDojoLiskov.Shapes2
 {
     public class Square : Shape
     {
