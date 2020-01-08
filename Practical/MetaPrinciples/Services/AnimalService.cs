@@ -8,6 +8,7 @@ namespace MetaPrinciples.Services
 {
     public class AnimalService
     {
+        // Use to simulate connection to the database
         public bool IsConnected { get; private set; }
 
         private List<Animal> animals;
