@@ -13,13 +13,11 @@ namespace MetaPrinciples.Controllers
     [Route("[controller]")]
     public class FarmController : ControllerBase
     {
-        private readonly ILogger<FarmController> logger;
         private readonly AnimalService animalService;
 
-        public FarmController(ILogger<FarmController> logger, AnimalService animalDb)
+        public FarmController()
         {
-            this.logger = logger;
-            this.animalService = animalDb;
+            this.animalService = new AnimalService();
 
             // things to do for this practical still:
             /*
