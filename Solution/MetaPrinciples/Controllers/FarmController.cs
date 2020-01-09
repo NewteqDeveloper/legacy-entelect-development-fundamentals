@@ -87,23 +87,5 @@ namespace MetaPrinciples.Controllers
             var cow = (Cow)animalCow;
             return cow.MakeSound();
         }
-
-        // TODO separation of concerns with reporting on animals
-
-        [HttpGet]
-        [Route("howManyDogs")]
-        public string HowManyDogs()
-        {
-            return animalService.ReportOfDogs();
-        }
-
-        [HttpGet]
-        [Route("NumberofCats")]
-        public IActionResult NoCats()
-        {
-            // TODO princple of least astonishment
-            animalService.ReportOfDogs();
-            return Ok(animalService.ReportOfCats());
-        }
     }
 }
