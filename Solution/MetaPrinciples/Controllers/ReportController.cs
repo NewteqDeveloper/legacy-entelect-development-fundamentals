@@ -1,4 +1,5 @@
-﻿using MetaPrinciples.Services;
+﻿using MetaPrinciples.Animals;
+using MetaPrinciples.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -20,9 +21,9 @@ namespace MetaPrinciples.Controllers
 
         [HttpGet]
         [Route("animalType")]
-        public string HowManyOfAnimalType()
+        public IActionResult HowManyOfAnimalType(AnimalType animalType)
         {
-            return animalService.ReportOfDogs();
+            return Ok(reportingService.AnimalCount(animalType));
         }
     }
 }
