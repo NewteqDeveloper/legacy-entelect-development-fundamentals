@@ -33,32 +33,17 @@ namespace MetaPrinciples.Controllers
         }
 
         [HttpGet]
-        [Route("getAll")]
-        public IList<Animal> GetAllAnimals()
+        [Route("get")]
+        public IActionResult GetAllAnimals(AnimalType? type = null)
         {
-            return animalService.Animals();
-        }
-
-        [HttpGet]
-        [Route("getAllCats")]
-        public List<Animal> GetAllCats()
-        {
-            return animalService.Animals().Where(x => x.Type == AnimalType.Cat).ToList();
-        }
-
-        [HttpGet]
-        [Route("getDogs")]
-        public IEnumerable<Animal> GetAllDogs()
-        {
-            return animalService.GetAllDogs();
-        }
-
-        [HttpGet]
-        [Route("getTheCowsOnTheFarm")]
-        public IActionResult GetAllCows()
-        {
-            animalService.GetAnimals();
-            return Ok(animalService.GetCows());
+            if (type == null)
+            {
+                return Ok(animalService.Animals());
+            }
+            else
+            {
+                return Ok(animalService.AnimalOfType(type.Value));
+            }
         }
 
         [HttpGet]

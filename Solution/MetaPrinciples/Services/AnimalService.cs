@@ -28,6 +28,11 @@ namespace MetaPrinciples.Services
             return Database.Data.Animals;
         }
 
+        public IList<Animal> AnimalOfType(AnimalType type)
+        {
+            return Database.Data.Animals.Where(Database.Data.GetAnimalByTypeFunc(type)).ToList();
+        }
+
         public IList<Animal> GetCows()
         {
             return animals.Where(x => x.Type == AnimalType.Cow).ToList();
