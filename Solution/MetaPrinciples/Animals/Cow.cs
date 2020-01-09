@@ -7,9 +7,7 @@ namespace MetaPrinciples.Animals
 {
     public class Cow : Animal
     {
-        public override AnimalType Type => AnimalType.Cow;
-
-        public string MakeSound()
+        public override string MakeSound()
         {
             return "Mooo!";
         }

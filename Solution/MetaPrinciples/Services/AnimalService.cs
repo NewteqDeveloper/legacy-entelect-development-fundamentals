@@ -8,69 +8,40 @@ namespace MetaPrinciples.Services
 {
     public class AnimalService
     {
-        public bool IsConnected { get; private set; }
-
         private List<Animal> animals;
 
         public AnimalService()
-        {
-
-        }
-
-        public void GetAnimals()
         {
             animals = Database.Data.Animals.ToList();
         }
 
         public IList<Animal> Animals()
         {
-            // load default animals
-            return Database.Data.Animals;
+            return animals;
         }
 
         public IList<Animal> AnimalOfType(AnimalType type)
         {
-            return Database.Data.Animals.Where(Database.Data.GetAnimalByTypeFunc(type)).ToList();
+            return animals.Where(Database.Data.GetAnimalByTypeFunc(type)).ToList();
         }
 
-        public IList<Animal> GetCows()
+        public string AnimalSound(AnimalType type)
         {
-            return animals.Where(x => x.Type == AnimalType.Cow).ToList();
-        }
-
-        public IEnumerable<Dog> GetAllDogs()
-        {
-            return animals.Where(x => x.Type == AnimalType.Dog).Select(x => (Dog)x);
-        }
-
-        // principle of least astonishment
-        public string ReportOfDogs()
-        {
-            if (!IsConnected)
+            var firstAnimal = animals.FirstOrDefault(Database.Data.GetAnimalByTypeFunc(type));
+            if (firstAnimal == null)
             {
-                IsConnected = true; // simulate opening database connection
+                return "Unknown sound";
             }
-
-            if (animals == null)
+            else
             {
-                animals = Animals().ToList();
+                return firstAnimal.Sound;
             }
-
-            var dogs = animals.Where(x => x.Type == AnimalType.Dog);
-            return $"There are a total of: {dogs.Count()} dogs";
         }
 
-        public string ReportOfCats()
+        public string PlayWithAnimal(int id)
         {
-            // TODO princple of least astonishment
-            
-            if (!IsConnected)
-            {
-                throw new InvalidOperationException("Connection to the database is not opened yet");
-            }
-
-            var cats = animals.Where(x => x.Type == AnimalType.Cat);
-            return $"There are a total of: {cats.Count()} cats";
+            var animal = animals.SingleOrDefault(x => x.Id == id);
+            return animal.Play();
         }
     }
 }

@@ -7,8 +7,17 @@ namespace MetaPrinciples.Animals
 {
     public abstract class Animal
     {
-        public abstract AnimalType Type { get; }
+        public int Id { get; set; }
+        
+        public string Type => this.GetType().Name;
 
         public string Name { get; set; }
+
+        public abstract string MakeSound();
+
+        public virtual string Play()
+        {
+            return "This animal does not know how to play";
+        }
     }
 }

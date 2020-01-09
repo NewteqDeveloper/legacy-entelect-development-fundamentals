@@ -7,14 +7,12 @@ namespace MetaPrinciples.Animals
 {
     public class Dog : Animal
     {
-        public override AnimalType Type => AnimalType.Dog;
-
-        public string Bark()
+        public override string MakeSound()
         {
             return "Bark!";
         }
 
-        public string PlayFetch()
+        public override string Play()
         {
             return "Dog fetches stick";
         }

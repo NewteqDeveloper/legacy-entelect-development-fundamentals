@@ -7,9 +7,12 @@ namespace MetaPrinciples.Animals
 {
     public class Bird : Animal
     {
-        public override AnimalType Type => AnimalType.Bird;
+        public override string MakeSound()
+        {
+            return "Coooo coooo";
+        }
 
-        public string PlayFly()
+        public override string Play()
         {
             return "Bird flies around the block and back";
         }
