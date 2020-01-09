@@ -27,7 +27,7 @@ namespace MetaPrinciples.Services
             }
 
             //return $"There are a total of: {animals[animalType].Count()} {animalType.ToString()}";
-            return $"There are a total of: {animals.Where(x => x.GetType().Name.Equals(animalType.ToString(), StringComparison.InvariantCultureIgnoreCase)).Count()} {animalType.ToString()}";
+            return $"There are a total of: {animals.Where(Database.Data.GetAnimalByTypeFunc(animalType)).Count()} {animalType.ToString()}";
         }
     }
 }

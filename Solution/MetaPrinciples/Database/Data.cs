@@ -53,6 +53,11 @@ namespace MetaPrinciples.Database
                 }
             };
 
+        public static Func<Animal, bool> GetAnimalByTypeFunc(AnimalType animalType)
+        {
+            return x => x.GetType().Name.Equals(animalType.ToString(), StringComparison.InvariantCultureIgnoreCase);
+        }
+
         public static Dictionary<AnimalType, IList<Animal>> AnimalDictionary()
         {
             var animals = Animals;
