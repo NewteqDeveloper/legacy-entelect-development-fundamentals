@@ -47,30 +47,17 @@ namespace MetaPrinciples.Controllers
         }
 
         [HttpGet]
-        [Route("whatDoesTheDogSay")]
-        public string DogSound()
+        [Route("sound")]
+        public IActionResult AnimalSound(AnimalType type)
         {
-            var animalDog = animalService.Animals().FirstOrDefault(x => x.Type == AnimalType.Dog);
-            var dog = (Dog)animalDog;
-            return dog.Bark();
+            return Ok(animalService.AnimalSound(type));
         }
 
         [HttpGet]
-        [Route("CatSays")]
-        public string CatSays()
+        [Route("play")]
+        public IActionResult PlayWithAnimal(int id)
         {
-            var animalCat = animalService.Animals().FirstOrDefault(x => x.Type == AnimalType.Cat);
-            var cat = (Cat)animalCat;
-            return cat.Sound;
-        }
-
-        [HttpGet]
-        [Route("cowSound")]
-        public string CowSoundMakes()
-        {
-            var animalCow = animalService.Animals().FirstOrDefault(x => x.Type == AnimalType.Cow);
-            var cow = (Cow)animalCow;
-            return cow.MakeSound();
+            return Ok(animalService.PlayWithAnimal(id));
         }
     }
 }

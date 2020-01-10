@@ -34,7 +34,7 @@ namespace MetaPrinciples.Services
             }
             else
             {
-                return firstAnimal.Sound;
+                return firstAnimal.MakeSound();
             }
         }
 

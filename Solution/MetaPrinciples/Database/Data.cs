@@ -13,43 +13,53 @@ namespace MetaPrinciples.Database
             {
                 new Cat
                 {
-                    Name = "Kitty"
+                    Name = "Kitty",
+                    Id = 1,
                 },
                 new Dog
                 {
-                    Name = "Doggo"
+                    Name = "Doggo",
+                    Id = 2,
                 },
                 new Dog
                 {
-                    Name = "Max"
+                    Name = "Max",
+                    Id = 3,
                 },
                 new Dog
                 {
                     Name = "Billy",
+                    Id = 4,
                 },
                 new Cat
                 {
-                    Name = "Ginger"
+                    Name = "Ginger",
+                    Id = 5,
                 },
                 new Cow
                 {
-                    Name = "Cowie"
+                    Name = "Cowie",
+                    Id = 6,
                 },
                 new Cow
                 {
-                    Name = "Milky"
+                    Name = "Milky",
+                    Id = 7,
                 },
                 new Sheep
                 {
-                    Name = "Ba ba sheep"
+                    Name = "Ba ba sheep",
+                    Id = 8,
                 },
                 new Chicken
                 {
-                    Name = "Chucky"
+                    Name = "Chucky",
+                    Id = 9,
                 },
                 new Bird
                 {
-                    Name = "Tweety"
+                    Name = "Tweety",
+                    Id = 10,
                 }
             };
 
