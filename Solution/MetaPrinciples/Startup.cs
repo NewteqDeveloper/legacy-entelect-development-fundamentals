@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MetaPrinciples.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -33,6 +34,9 @@ namespace MetaPrinciples
                 // ignore obsolete warning, as it does not work as intended without this
                 options.DescribeAllEnumsAsStrings();
             });
+
+            services.AddTransient<IAnimalService, AnimalService>();
+            services.AddTransient<IReportingService, ReportingService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MetaPrinciples.Services
 {
-    public class AnimalService
+    public class AnimalService : IAnimalService
     {
         private List<Animal> animals;
 

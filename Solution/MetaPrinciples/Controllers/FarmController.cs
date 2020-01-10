@@ -24,12 +24,11 @@ namespace MetaPrinciples.Controllers
      */
     public class FarmController : ControllerBase
     {
-        private readonly AnimalService animalService;
+        private readonly IAnimalService animalService;
 
-        public FarmController()
+        public FarmController(IAnimalService animalService)
         {
-            // animal service should not be new'd up
-            this.animalService = new AnimalService();
+            this.animalService = animalService;
         }
 
         [HttpGet]
