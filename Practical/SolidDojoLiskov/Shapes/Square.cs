@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SolidDojoLiskov.Shapes2
+namespace SolidDojoLiskov.Shapes
 {
     public class Square : Shape
     {
-        public new int Draw()
+        public override object Draw()
         {
             return 4 * 4;
         }

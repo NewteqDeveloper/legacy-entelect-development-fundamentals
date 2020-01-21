@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SolidDojoLiskov.Shapes2
+namespace SolidDojoLiskov.Shapes
 {
     public class Circle : Shape
     {
-        public override string Draw()
+        public override object Draw()
         {
             return "Drawing Circle";
         }
