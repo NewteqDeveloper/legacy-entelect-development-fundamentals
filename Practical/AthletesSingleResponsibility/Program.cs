@@ -13,11 +13,8 @@ namespace AtheletesSingleResponsibility
                 if(athlete.GetType() == typeof(HighJumper))
                 {
                     athlete.HighJump();
-                }
-
-                if (athlete.GetType() == typeof(JavelinThrower))
-                {
-                    athlete.ThrowJavelin();
+                    // this is intentional, and will break, because this high jumper does not know what to do with this type
+                    athlete.LongJump();
                 }
 
                 if (athlete.GetType() == typeof(LongJumper))
@@ -32,14 +29,7 @@ namespace AtheletesSingleResponsibility
                     athlete.RunRelay();
                     athlete.RunHurdles();
                     // this is intentional, and will break, because this runner does not know what to do with this type
-                    athlete.ThrowJavelin();
-                }
-
-                if (athlete.GetType() == typeof(ShotputThrower))
-                {
-                    athlete.ThrowShotput();
-                    // this is intentional, and will break, because this shotput thrower does not know what to do with this type
-                    athlete.ThrowJavelin();
+                    athlete.Swim(SwimDistance.OneHundred);
                 }
 
                 if (athlete.GetType() == typeof(Swimmer))
