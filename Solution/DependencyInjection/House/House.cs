@@ -30,6 +30,8 @@ namespace DependencyInjection.House
             this.cleaningService = cleaningService;
             this.sanitationService = sanitationService;
 
+            services = new Dictionary<HouseService, IHouseHoldService>();
+
             this.services.Add(HouseService.Electricity, this.electricityService);
             this.services.Add(HouseService.Water, this.waterService);
             this.services.Add(HouseService.Internet, this.internetService);
