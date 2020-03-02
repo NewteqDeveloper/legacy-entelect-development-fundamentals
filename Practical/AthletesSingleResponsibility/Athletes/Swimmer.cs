@@ -40,16 +40,6 @@ namespace AtheletesSingleResponsibility.Athletes
             Console.WriteLine($"{AtheleteInformation} - swimming as fast as I can for {(int) distance}");
         }
 
-        public override void ThrowJavelin()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void ThrowShotput()
-        {
-            throw new NotImplementedException();
-        }
-
         public override void TripleJump()
         {
             throw new NotImplementedException();

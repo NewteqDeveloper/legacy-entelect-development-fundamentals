@@ -45,10 +45,8 @@ namespace AtheletesSingleResponsibility
         public abstract void Swim(SwimDistance distance);
         public abstract void LongJump();
         public abstract void HighJump();
-        public abstract void ThrowJavelin();
         public abstract void RunHurdles();
         public abstract void RunRelay();
-        public abstract void ThrowShotput();
         public abstract void TripleJump();
     }
 }

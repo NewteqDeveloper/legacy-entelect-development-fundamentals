@@ -40,16 +40,6 @@ namespace AtheletesSingleResponsibility.Athletes
             throw new NotImplementedException();
         }
 
-        public override void ThrowJavelin()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void ThrowShotput()
-        {
-            throw new NotImplementedException();
-        }
-
         public override void TripleJump()
         {
             Console.WriteLine($"{AtheleteInformation} Performing 1 long jump, 2 longer jump, and 3 LOOOOOONGEST jump");

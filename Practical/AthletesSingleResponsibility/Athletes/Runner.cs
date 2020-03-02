@@ -40,16 +40,6 @@ namespace AtheletesSingleResponsibility.Athletes
             throw new NotImplementedException();
         }
 
-        public override void ThrowJavelin()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void ThrowShotput()
-        {
-            throw new NotImplementedException();
-        }
-
         public override void TripleJump()
         {
             throw new NotImplementedException();
