@@ -52,7 +52,7 @@ namespace AtheletesSingleResponsibility.Athletes
 
         public override void TripleJump()
         {
-            Console.WriteLine($"{AtheleteInformation} Performing 1 long jump, 2 longer jump, and 3 LOOOOOONG jump");
+            Console.WriteLine($"{AtheleteInformation} Performing 1 long jump, 2 longer jump, and 3 LOOOOOONGEST jump");
         }
     }
 }
