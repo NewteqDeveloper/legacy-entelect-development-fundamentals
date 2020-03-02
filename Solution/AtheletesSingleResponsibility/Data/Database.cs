@@ -11,14 +11,13 @@ namespace AtheletesSingleResponsibility.Data
         {
             new HighJumper("High", "Jumper", Gender.Male, "ZA"),
             new HighJumper("Girl", "Jumper", Gender.Female, "US"),
-            new JavelinThrower("Super", "Armer", Gender.Male, "ZA"),
-            new JavelinThrower("Girl", "Javelin", Gender.Female, "UK"),
             new LongJumper("Super", "Long", Gender.Male, "ZA"),
+            new TripleJumper("Mike", "Triple", Gender.Male, "UK"),
             new Sprinter("Usain", "Bolt", Gender.Male, "JM", SprintDistance.OneHundred),
             new Sprinter("Caster", "Semenya", Gender.Female, "ZA", SprintDistance.TwoHundred),
-            new ShotputThrower("Heavy", "Dude", Gender.Male, "AU"),
+            new RelayRunner("Newteq", "Developer", Gender.Male, "ZA"),
             new Swimmer("Fast", "Swimm", Gender.Female, "NZ", SwimDistance.TwoHundred),
-            new HighJumper("Michael", "Phelps", Gender.Male, "US"),
+            new Swimmer("Michael", "Phelps", Gender.Male, "US", SwimDistance.OneHundred),
         };
     }
 }
