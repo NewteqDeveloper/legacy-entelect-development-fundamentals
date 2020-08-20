@@ -18,6 +18,44 @@ namespace SolidDojoLiskov
             {
                 throw new Exception("Invalid data sent to printer");
             }
+
+
+
+
+            var report = new Report();
+            
+            
+            
+            
+            report.PrintA();
+            report.PrintB();
+
+
+
+
+
+            report.PrintB();
+            report.PrintA();
+
+
+        }
+
+        public void Print(Shape shape)
+        {
+            // do printing
+        }
+    }
+
+    public class Report
+    {
+        public void PrintA()
+        {
+
+        }
+
+        public void PrintB()
+        {
+
         }
     }
 }
